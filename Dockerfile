@@ -12,7 +12,6 @@ RUN apt update && \
     apt install -y curl cmake  gcc g++ git systemd python3-dev  && \
     rm -rf /var/lib/apt/lists/*
 
-#install loging agent
 #install pip
 RUN curl -kL https://bootstrap.pypa.io/get-pip.py | python3
 

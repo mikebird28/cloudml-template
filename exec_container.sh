@@ -1,22 +1,10 @@
 #!/bin/sh
 
-if [ "$1" = "" ]
-then
-    echo "Error : you should specify instance name."
-    exit 1
-else
-    INSTANCE_NAME=$1
+[ -z "$1" ] || { echo "Error : you should specify instance name."; exit 1; }
+[ -z "$2" ] || { echo "Error : you should specify container image."; exit 1; }
 
-fi
-
-if [ "$2" = "" ]
-then
-    echo "Error : you should specify container image"
-    exit 1
-else
-    CONTAINER_IMAGE=$2
-fi
-
+INSTANCE_NAME=$1
+CONTAINER_IMAGE=$2
 
 #Google Compute Engineでイメージを実行
 #引数の詳細は https://cloud.google.com/sdk/gcloud/reference/beta/compute/instances/create-with-container 
