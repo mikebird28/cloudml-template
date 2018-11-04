@@ -1,7 +1,7 @@
 #!/bin/sh
 
-[ -z "$1" ] || { echo "Error : you should specify instance name."; exit 1; }
-[ -z "$2" ] || { echo "Error : you should specify container image."; exit 1; }
+[ -z "$1" ] && { echo "Error : you should specify instance name."; exit 1; }
+[ -z "$2" ] && { echo "Error : you should specify container image."; exit 1; }
 
 INSTANCE_NAME=$1
 CONTAINER_IMAGE=$2

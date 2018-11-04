@@ -3,6 +3,7 @@ FROM ubuntu:latest
 MAINTAINER mikebird28
 
 ARG SCRIPT_FILE
+ENV SCRIPT_FILE ${SCRIPT_FILE}
 
 WORKDIR /app
 ADD . /app
@@ -27,5 +28,5 @@ RUN git clone --recursive https://github.com/Microsoft/LightGBM && \
     rm -rf LightGBM
 
 #RUN script
-CMD ["python3","-u",$SCRIPT_FILE]
+CMD ["python3", "-u", "$SCRIPT_FILE"]
 
