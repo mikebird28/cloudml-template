@@ -28,5 +28,5 @@ RUN git clone --recursive https://github.com/Microsoft/LightGBM && \
     rm -rf LightGBM
 
 #RUN script
-CMD ["python3", "-u", "$SCRIPT_FILE"]
+CMD /usr/bin/python3 -u $SCRIPT_FILE
 
